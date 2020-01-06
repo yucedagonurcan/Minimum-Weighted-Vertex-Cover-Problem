@@ -1,6 +1,8 @@
 import numpy as np
 import random
 import sys
+import pandas as pd
+from tabulate import tabulate
 
 input_file = sys.argv[1]
 generation_num = int(sys.argv[2])
@@ -55,77 +57,71 @@ def ReadInputFile(input_file):
 
 num_of_nodes, num_of_edges, weight_vec, adj_matrix = ReadInputFile(input_file=input_file)
 
-def FindFlipNodes(cur_sample, covered_nodes):
+def FindFlipNodes(_temp_adj_matrix, not_covered_edges_idx):
 
-    not_included_nodes = np.setdiff1d(np.argwhere(cur_sample == 0), list(covered_nodes), assume_unique=True)
-    if(len(not_included_nodes) <= 0 ):
-        num_not_included_nodes = len(cur_sample) - cur_sample.sum()
-        efficiency_matrix = np.concatenate([np.argwhere(cur_sample == 0) , np.zeros(shape=(num_not_included_nodes, 1))], axis=1)
-    else:
-        efficiency_matrix = np.concatenate((not_included_nodes[:,None], np.zeros(shape=(len(not_included_nodes), 1))), axis=1)
+    _temp_adj_triu_idx = np.tril_indices_from(_temp_adj_matrix)
 
+    employable_edges_idx = np.argwhere(_temp_adj_matrix[_temp_adj_triu_idx] == 1)
+    employable_nodes_idx = _temp_adj_triu_idx[0][employable_edges_idx]
+    efficiency_matrix = pd.DataFrame(np.array(np.unique(employable_nodes_idx, return_counts=True)).T,
+                        columns=["NodeID", "Efficiency"], dtype=object)
+    efficiency_matrix["NodeID"] = efficiency_matrix["NodeID"].astype(np.int)
+    efficiency_matrix["Efficiency"] = efficiency_matrix["Efficiency"]/weight_vec[efficiency_matrix["NodeID"]]
 
-    for cur_node, idx in zip(efficiency_matrix, range(0, len(efficiency_matrix))):
-        cur_node_idx = int(cur_node[0])
-        cur_neighbours = CheckNeighbours(cur_node_idx)
-        unexplored_neighbours = len(cur_neighbours) - np.intersect1d(list(covered_nodes), cur_neighbours, assume_unique=True).size
-        node_efficiency = unexplored_neighbours / weight_vec[cur_node_idx] 
-        efficiency_matrix[idx, 1] = node_efficiency
-    return sorted(efficiency_matrix, key=lambda a_entry: a_entry[1], reverse=True)
+    return efficiency_matrix.sort_values(by=['Efficiency'], ascending=False)
 
 def CheckNeighbours(node_idx):
     node_idx = int(node_idx)
     cur_neighbours = np.argwhere(adj_matrix[node_idx] == 1)
     return cur_neighbours
 
-def CheckVertexCover(nodes_employed_idx):
-    covered_nodes = set()
-    for node_idx in nodes_employed_idx:
-        cur_neighbours = CheckNeighbours(node_idx)
-        covered_nodes.update(cur_neighbours.flatten())
-    if(len(covered_nodes) != len(adj_matrix)):
-        return covered_nodes
-    return None
+def CheckVertexCover(_temp_adj_matrix):
+
+    # Not Covered Edges Indices
+    return np.argwhere(_temp_adj_matrix != 0)
+
+def ModifyAdjMatrixForSample(_temp_adj_matrix, nodes_employed_idx):
+    _temp_adj_matrix[nodes_employed_idx] = _temp_adj_matrix[:, nodes_employed_idx] = 0
 
 def CheckRepair(generation):
 
     for cur_sample, sample_idx in zip(generation, range(0, len(generation))):
+        _temp_adj_matrix = adj_matrix.copy()
         nodes_employed_idx = np.argwhere(cur_sample==1)
-        covered_nodes = CheckVertexCover(nodes_employed_idx=nodes_employed_idx)
-        if(covered_nodes is not None):
-            cur_sample = ExecuteRepair(cur_sample=cur_sample, covered_nodes=covered_nodes)
+        ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=nodes_employed_idx)
+
+        not_covered_edges_idx = CheckVertexCover(_temp_adj_matrix=_temp_adj_matrix)
+        if(not_covered_edges_idx.size != 0):
+            ExecuteRepair(cur_sample=cur_sample, _temp_adj_matrix=_temp_adj_matrix, not_covered_edges_idx=not_covered_edges_idx)
     return generation
 
-def ExecuteRepair(cur_sample, covered_nodes):
+def ExecuteRepair(cur_sample, _temp_adj_matrix, not_covered_edges_idx):
     is_repaired = False
-    while(is_repaired == False):         
-        flip_eff_mat = FindFlipNodes(cur_sample, covered_nodes)
+    while(is_repaired == False):  
+
+        flip_eff_mat = FindFlipNodes(_temp_adj_matrix, not_covered_edges_idx)
         last_employed_node_idx = -1
         if(np.random.randn() > 0.8):
             rand_flip_idx = np.random.randint(len(flip_eff_mat))
-            cur_sample[int(flip_eff_mat[rand_flip_idx][0])] = 1
+            cur_sample[flip_eff_mat.iloc[rand_flip_idx]["NodeID"]] = 1
             last_employed_node_idx = rand_flip_idx
         else:
-            cur_sample[int(flip_eff_mat[0][0])] = 1
+            cur_sample[flip_eff_mat.iloc[0].NodeID] = 1
             last_employed_node_idx = 0
 
         nodes_employed_idx = np.argwhere(cur_sample==1)
-
-        covered_nodes.update(CheckVertexCover(nodes_employed_idx=[flip_eff_mat[last_employed_node_idx][0]]))
-        is_repaired = len(covered_nodes) == len(cur_sample)
-    return cur_sample
+        ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=nodes_employed_idx)
+        not_covered_edges_idx = CheckVertexCover(_temp_adj_matrix=_temp_adj_matrix)
+        is_repaired = not_covered_edges_idx.size == 0
     
 generation = GetRandomGeneration(population_size=population_size)
-generation[0] = np.zeros(shape=(len(generation[0])))
-
 generation = CheckRepair(generation=generation)
-
 
 
 def TournementSelection():
     best = None
     for i in range(2):
-        index = random.randint(0, population_size - 1)
-        if (best == None or weight_vec[index] < weight_vec[best]):
-            best = index
+        NodeID = random.randint(0, population_size - 1)
+        if (best == None or weight_vec[NodeID] < weight_vec[best]):
+            best = NodeID
     return best 
