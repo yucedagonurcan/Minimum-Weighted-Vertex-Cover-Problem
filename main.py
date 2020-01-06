@@ -56,9 +56,15 @@ def ReadInputFile(input_file):
 num_of_nodes, num_of_edges, weight_vec, adj_matrix = ReadInputFile(input_file=input_file)
 
 def FindFlipNodes(cur_sample, covered_nodes):
-    #Create the temporary vector depending on the nodes/weight
-    num_not_included_nodes = len(cur_sample) - cur_sample.sum()
-    efficiency_matrix = np.concatenate([np.argwhere(cur_sample == 0) , np.zeros(shape=(num_not_included_nodes, 1))], axis=1)
+
+    not_included_nodes = np.setdiff1d(np.argwhere(cur_sample == 0), list(covered_nodes), assume_unique=True)
+    if(len(not_included_nodes) <= 0 ):
+        num_not_included_nodes = len(cur_sample) - cur_sample.sum()
+        efficiency_matrix = np.concatenate([np.argwhere(cur_sample == 0) , np.zeros(shape=(num_not_included_nodes, 1))], axis=1)
+    else:
+        efficiency_matrix = np.concatenate((not_included_nodes[:,None], np.zeros(shape=(len(not_included_nodes), 1))), axis=1)
+
+
     for cur_node, idx in zip(efficiency_matrix, range(0, len(efficiency_matrix))):
         cur_node_idx = int(cur_node[0])
         cur_neighbours = CheckNeighbours(cur_node_idx)
@@ -104,15 +110,16 @@ def ExecuteRepair(cur_sample, covered_nodes):
             last_employed_node_idx = 0
 
         nodes_employed_idx = np.argwhere(cur_sample==1)
-        #WE don't have to check every employed node, we only need to check the last added node's neighbours.
+
         covered_nodes.update(CheckVertexCover(nodes_employed_idx=[flip_eff_mat[last_employed_node_idx][0]]))
         is_repaired = len(covered_nodes) == len(cur_sample)
     return cur_sample
     
 generation = GetRandomGeneration(population_size=population_size)
 generation[0] = np.zeros(shape=(len(generation[0])))
+
 generation = CheckRepair(generation=generation)
-ExecuteRepair(generation=generation)
+
 
 
 def TournementSelection():
