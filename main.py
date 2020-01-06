@@ -113,3 +113,12 @@ while(len(broken_samples) > 0):
 
 
 ExecuteRepair(generation=generation)
+
+import random 
+def tournament_selection():
+    best = None
+    for i in range(2):
+        index = random.randint(1, population_size)
+        if (best == None or weight_vec[index] < weight_vec[best]):
+            best = index
+    return best 
