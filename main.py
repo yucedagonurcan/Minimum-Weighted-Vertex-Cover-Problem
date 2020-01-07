@@ -73,7 +73,6 @@ def CheckRepair(generation):
     start_repair = end_repair = 0
     for cur_sample, sample_idx in zip(generation, range(0, len(generation))):
         start_repair = time.time()
-        print(f"Repairing: {sample_idx}")
         _temp_adj_matrix = adj_matrix.copy()
         nodes_employed_idx = np.nonzero(cur_sample)
         ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=nodes_employed_idx)
@@ -83,37 +82,29 @@ def CheckRepair(generation):
             start_exec_repair = time.time()
             ExecuteRepair(cur_sample=cur_sample, _temp_adj_matrix=_temp_adj_matrix, not_covered_edges_idx=not_covered_edges_idx)
             end_exec_repair = time.time()
-            print(f"Time for Execute Repair: {end_exec_repair - start_exec_repair }")
 
-        end_repair=time.time()
-        print(f"Total Time: {end_repair - start_repair}")
 
     return generation
 
 def ExecuteRepair(cur_sample, _temp_adj_matrix, not_covered_edges_idx):
     is_repaired = False
-    one_step_exec_arr = []
     while(is_repaired == False):  
-        start_exec = time.time()
         new_employed_idx = np.random.choice(not_covered_edges_idx[:][0], size=np.random.randint(low=2, high=50))
         cur_sample[new_employed_idx] = 1
 
         ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=None, new_employed_idx=new_employed_idx)
         not_covered_edges_idx = CheckVertexCover(_temp_adj_matrix=_temp_adj_matrix)
         is_repaired = len(not_covered_edges_idx[0]) == 0
-        end_exec = time.time()
-        one_step_exec_arr.append(end_exec-start_exec)
-    print(f"Mean Exec Cover: {np.mean(one_step_exec_arr)}")
 
+def TournementSelectMatingPool(generation):
+   
+    random_parents_idx = np.random.choice(generation_num, size=(generation_num, 2))
+    is_first_col_costlier = weight_vec[random_parents_idx[:, 0]] > weight_vec[random_parents_idx[:, 1]]
+    selected_idx = [row[1] if is_first_col_costlier[ind] else row[0] for ind, row in zip(range(generation_num),random_parents_idx)]
+    return selected_idx
 
 generation = GetRandomGeneration(population_size=population_size)
-generation = CheckRepair(generation=generation)
+CheckRepair(generation=generation)
+selected_generation_idx = TournementSelectMatingPool(generation=generation)
+generation = generation[selected_generation_idx]
 
-
-def TournementSelection():
-    best = None
-    for i in range(2):
-        NodeID = random.randint(0, population_size - 1)
-        if (best == None or weight_vec[NodeID] < weight_vec[best]):
-            best = NodeID
-    return best 
