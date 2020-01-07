@@ -2,7 +2,7 @@ import numpy as np
 import random
 import sys
 import pandas as pd
-from tabulate import tabulate
+import time
 
 input_file = sys.argv[1]
 generation_num = int(sys.argv[2])
@@ -70,11 +70,6 @@ def FindFlipNodes(_temp_adj_matrix, not_covered_edges_idx):
 
     return efficiency_matrix.sort_values(by=['Efficiency'], ascending=False)
 
-def CheckNeighbours(node_idx):
-    node_idx = int(node_idx)
-    cur_neighbours = np.argwhere(adj_matrix[node_idx] == 1)
-    return cur_neighbours
-
 def CheckVertexCover(_temp_adj_matrix):
 
     # Not Covered Edges Indices
@@ -85,38 +80,50 @@ def ModifyAdjMatrixForSample(_temp_adj_matrix, nodes_employed_idx):
 
 def CheckRepair(generation):
 
+    start_repair = end_repair = 0
     for cur_sample, sample_idx in zip(generation, range(0, len(generation))):
+        start_repair = time.time()
+        print(f"Repairing: {sample_idx}")
         _temp_adj_matrix = adj_matrix.copy()
         nodes_employed_idx = np.argwhere(cur_sample==1)
         ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=nodes_employed_idx)
-
+    
         not_covered_edges_idx = CheckVertexCover(_temp_adj_matrix=_temp_adj_matrix)
         if(not_covered_edges_idx.size != 0):
+            start_exec_repair = time.time()
             ExecuteRepair(cur_sample=cur_sample, _temp_adj_matrix=_temp_adj_matrix, not_covered_edges_idx=not_covered_edges_idx)
+            end_exec_repair = time.time()
+            print(f"Time for Execute Repair: {end_exec_repair - start_exec_repair }")
+
+        end_repair=time.time()
+        print(f"Total Time: {end_repair - start_repair}")
+
     return generation
 
 def ExecuteRepair(cur_sample, _temp_adj_matrix, not_covered_edges_idx):
     is_repaired = False
+    flip_time_arr = []
     while(is_repaired == False):  
 
+        start_flip = time.time()
         flip_eff_mat = FindFlipNodes(_temp_adj_matrix, not_covered_edges_idx)
-        last_employed_node_idx = -1
+        end_flip = time.time()
+        flip_time_arr.append(end_flip - start_flip)
+        
         if(np.random.randn() > 0.8):
             rand_flip_idx = np.random.randint(len(flip_eff_mat))
             cur_sample[flip_eff_mat.iloc[rand_flip_idx]["NodeID"]] = 1
-            last_employed_node_idx = rand_flip_idx
         else:
             cur_sample[flip_eff_mat.iloc[0].NodeID] = 1
-            last_employed_node_idx = 0
 
         nodes_employed_idx = np.argwhere(cur_sample==1)
         ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=nodes_employed_idx)
         not_covered_edges_idx = CheckVertexCover(_temp_adj_matrix=_temp_adj_matrix)
         is_repaired = not_covered_edges_idx.size == 0
-    
+    print(f"Mean flip time: {np.mean(flip_time_arr)}, Total Flips = {len(flip_time_arr)}, Total Flip Time = {np.sum(flip_time_arr)}")
 generation = GetRandomGeneration(population_size=population_size)
 generation = CheckRepair(generation=generation)
-
+pass
 
 def TournementSelection():
     best = None
