@@ -58,7 +58,6 @@ def ReadInputFile(input_file):
 num_of_nodes, num_of_edges, weight_vec, adj_matrix = ReadInputFile(input_file=input_file)
 
 def CheckVertexCover(_temp_adj_matrix):
-
     # Not Covered Edges Indices
     return np.nonzero(_temp_adj_matrix)
 
@@ -82,8 +81,6 @@ def CheckRepair(generation):
             start_exec_repair = time.time()
             ExecuteRepair(cur_sample=cur_sample, _temp_adj_matrix=_temp_adj_matrix, not_covered_edges_idx=not_covered_edges_idx)
             end_exec_repair = time.time()
-
-
     return generation
 
 def ExecuteRepair(cur_sample, _temp_adj_matrix, not_covered_edges_idx):
@@ -97,14 +94,19 @@ def ExecuteRepair(cur_sample, _temp_adj_matrix, not_covered_edges_idx):
         is_repaired = len(not_covered_edges_idx[0]) == 0
 
 def TournementSelectMatingPool(generation):
-   
     random_parents_idx = np.random.choice(generation_num, size=(generation_num, 2))
     is_first_col_costlier = weight_vec[random_parents_idx[:, 0]] > weight_vec[random_parents_idx[:, 1]]
     selected_idx = [row[1] if is_first_col_costlier[ind] else row[0] for ind, row in zip(range(generation_num),random_parents_idx)]
     return selected_idx
 
+def ApplyCrossover(generation):
+    random_crossover_pairs = np.random.choice(generation_num, size=(generation_num, 2))
+    for pair in random_crossover_pairs:
+        crossover_point = np.random.randint(1, num_of_nodes - 1)
+        #! Optimization issue...
+        generation[pair[0]][crossover_point:], generation[pair[1]][crossover_point:] = generation[pair[1]][crossover_point:], generation[pair[0]][crossover_point:].copy()
+
 generation = GetRandomGeneration(population_size=population_size)
 CheckRepair(generation=generation)
-selected_generation_idx = TournementSelectMatingPool(generation=generation)
-generation = generation[selected_generation_idx]
-
+generation = generation[TournementSelectMatingPool(generation=generation)]
+ApplyCrossover(generation=generation)
