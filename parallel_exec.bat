@@ -22,3 +22,4 @@ start cmd /k py c:\Users\adastec\Documents\Development\Minimum-Weighted-Vertex-C
 
 start cmd /k py c:\Users\adastec\Documents\Development\Minimum-Weighted-Vertex-Cover-Problem\main.py 003.txt 100 100 0.9 1/n
 start cmd /k py c:\Users\adastec\Documents\Development\Minimum-Weighted-Vertex-Cover-Problem\main.py 003.txt 100 200 0.9 1/n
+

@@ -1,0 +1,674 @@
+Name of the graph file:  003.txt
+Number of generations:  100
+Population size:  100
+Crossover probability:  0.5
+Mutation probability:  1/n
+
+First Repair Time: 43.61898064613342
+
+0th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997781753540039
+	Mutation Time: 0.002052783966064453
+	Second Repair Time: 2.455012559890747
+	Total Generation Time: 2.4580631256103516
+	Mean(Between Samples) Cost Time: 465.59808659999993
+1th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009653568267822266
+	Mutation Time: 0.003047943115234375
+	Second Repair Time: 2.484436273574829
+	Total Generation Time: 2.4884495735168457
+	Mean(Between Samples) Cost Time: 468.78168550000004
+2th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009984970092773438
+	Mutation Time: 0.0029587745666503906
+	Second Repair Time: 2.267671585083008
+	Total Generation Time: 2.2716288566589355
+	Mean(Between Samples) Cost Time: 471.1904875
+3th Generation:
+	Tournement Time: 0.0009984970092773438
+	Crossover Time: 0.0010306835174560547
+	Mutation Time: 0.0019915103912353516
+	Second Repair Time: 2.112863540649414
+	Total Generation Time: 2.116884231567383
+	Mean(Between Samples) Cost Time: 472.39728919999993
+4th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.00099945068359375
+	Mutation Time: 0.001992464065551758
+	Second Repair Time: 2.1390743255615234
+	Total Generation Time: 2.142066240310669
+	Mean(Between Samples) Cost Time: 474.2250898
+5th Generation:
+	Tournement Time: 0.0009987354278564453
+	Crossover Time: 0.001033782958984375
+	Mutation Time: 0.001987934112548828
+	Second Repair Time: 2.0120973587036133
+	Total Generation Time: 2.016117811203003
+	Mean(Between Samples) Cost Time: 474.76179
+6th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000995635986328125
+	Mutation Time: 0.0020079612731933594
+	Second Repair Time: 1.9689209461212158
+	Total Generation Time: 1.9719245433807373
+	Mean(Between Samples) Cost Time: 475.0149899
+7th Generation:
+	Tournement Time: 0.0009639263153076172
+	Crossover Time: 0.0
+	Mutation Time: 0.001995086669921875
+	Second Repair Time: 1.952742099761963
+	Total Generation Time: 1.9557011127471924
+	Mean(Between Samples) Cost Time: 475.28018970000005
+8th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010347366333007812
+	Mutation Time: 0.0019788742065429688
+	Second Repair Time: 1.9155552387237549
+	Total Generation Time: 1.9185688495635986
+	Mean(Between Samples) Cost Time: 475.56099
+9th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009963512420654297
+	Mutation Time: 0.0020308494567871094
+	Second Repair Time: 1.9124512672424316
+	Total Generation Time: 1.9154784679412842
+	Mean(Between Samples) Cost Time: 476.1462899
+10th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009961128234863281
+	Mutation Time: 0.0020334720611572266
+	Second Repair Time: 1.8032069206237793
+	Total Generation Time: 1.8062365055084229
+	Mean(Between Samples) Cost Time: 475.68659
+11th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009968280792236328
+	Mutation Time: 0.002026796340942383
+	Second Repair Time: 1.8478138446807861
+	Total Generation Time: 1.8508374691009521
+	Mean(Between Samples) Cost Time: 476.50548990000004
+12th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010268688201904297
+	Mutation Time: 0.0019669532775878906
+	Second Repair Time: 1.7870159149169922
+	Total Generation Time: 1.7900097370147705
+	Mean(Between Samples) Cost Time: 476.31758980000006
+13th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009968280792236328
+	Mutation Time: 0.001995086669921875
+	Second Repair Time: 1.7448012828826904
+	Total Generation Time: 1.747793197631836
+	Mean(Between Samples) Cost Time: 476.8777899999999
+14th Generation:
+	Tournement Time: 0.0009889602661132812
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.001995086669921875
+	Second Repair Time: 1.8017723560333252
+	Total Generation Time: 1.8057537078857422
+	Mean(Between Samples) Cost Time: 477.18488999999994
+15th Generation:
+	Tournement Time: 0.0009982585906982422
+	Crossover Time: 0.0010287761688232422
+	Mutation Time: 0.0019960403442382812
+	Second Repair Time: 1.6689684391021729
+	Total Generation Time: 1.6729915142059326
+	Mean(Between Samples) Cost Time: 477.12258990000004
+16th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.0029938220977783203
+	Second Repair Time: 1.7229011058807373
+	Total Generation Time: 1.7268922328948975
+	Mean(Between Samples) Cost Time: 477.22378999999995
+17th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010311603546142578
+	Mutation Time: 0.001997709274291992
+	Second Repair Time: 1.6713812351226807
+	Total Generation Time: 1.674410104751587
+	Mean(Between Samples) Cost Time: 477.39058980000004
+18th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009980201721191406
+	Mutation Time: 0.000997304916381836
+	Second Repair Time: 1.7751176357269287
+	Total Generation Time: 1.7781097888946533
+	Mean(Between Samples) Cost Time: 477.7929899999999
+19th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009992122650146484
+	Mutation Time: 0.001997709274291992
+	Second Repair Time: 1.791163444519043
+	Total Generation Time: 1.7941603660583496
+	Mean(Between Samples) Cost Time: 477.72019000000006
+20th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009989738464355469
+	Mutation Time: 0.0020012855529785156
+	Second Repair Time: 1.7384440898895264
+	Total Generation Time: 1.7414443492889404
+	Mean(Between Samples) Cost Time: 477.58189
+21th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009984970092773438
+	Mutation Time: 0.001959562301635742
+	Second Repair Time: 1.7971794605255127
+	Total Generation Time: 1.8001375198364258
+	Mean(Between Samples) Cost Time: 477.36768989999996
+22th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010826587677001953
+	Mutation Time: 0.0019145011901855469
+	Second Repair Time: 1.7073967456817627
+	Total Generation Time: 1.7103939056396484
+	Mean(Between Samples) Cost Time: 477.1947896
+23th Generation:
+	Tournement Time: 0.0009980201721191406
+	Crossover Time: 0.0009970664978027344
+	Mutation Time: 0.001994609832763672
+	Second Repair Time: 1.766197919845581
+	Total Generation Time: 1.7701876163482666
+	Mean(Between Samples) Cost Time: 477.56898960000007
+24th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009968280792236328
+	Mutation Time: 0.0020287036895751953
+	Second Repair Time: 1.7578420639038086
+	Total Generation Time: 1.7608675956726074
+	Mean(Between Samples) Cost Time: 477.335089
+25th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.001004934310913086
+	Mutation Time: 0.0019948482513427734
+	Second Repair Time: 1.7267990112304688
+	Total Generation Time: 1.7297987937927246
+	Mean(Between Samples) Cost Time: 477.56428860000005
+26th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009951591491699219
+	Mutation Time: 0.0019965171813964844
+	Second Repair Time: 1.850080966949463
+	Total Generation Time: 1.8530726432800293
+	Mean(Between Samples) Cost Time: 477.69408890000005
+27th Generation:
+	Tournement Time: 0.0009658336639404297
+	Crossover Time: 0.0010304450988769531
+	Mutation Time: 0.001963376998901367
+	Second Repair Time: 1.7469773292541504
+	Total Generation Time: 1.7509369850158691
+	Mean(Between Samples) Cost Time: 477.74738879999995
+28th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010175704956054688
+	Mutation Time: 0.001991748809814453
+	Second Repair Time: 1.7528550624847412
+	Total Generation Time: 1.7558643817901611
+	Mean(Between Samples) Cost Time: 477.46388920000004
+29th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009655952453613281
+	Mutation Time: 0.002026796340942383
+	Second Repair Time: 1.7169394493103027
+	Total Generation Time: 1.7199318408966064
+	Mean(Between Samples) Cost Time: 477.58868950000004
+30th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.001994609832763672
+	Mutation Time: 0.001994609832763672
+	Second Repair Time: 1.762481689453125
+	Total Generation Time: 1.7664709091186523
+	Mean(Between Samples) Cost Time: 477.4788897999999
+31th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010306835174560547
+	Mutation Time: 0.0019893646240234375
+	Second Repair Time: 1.7608513832092285
+	Total Generation Time: 1.7648704051971436
+	Mean(Between Samples) Cost Time: 477.2805900000001
+32th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009968280792236328
+	Mutation Time: 0.0020294189453125
+	Second Repair Time: 1.7455761432647705
+	Total Generation Time: 1.7486023902893066
+	Mean(Between Samples) Cost Time: 477.20899000000003
+33th Generation:
+	Tournement Time: 0.000997304916381836
+	Crossover Time: 0.0009975433349609375
+	Mutation Time: 0.0019941329956054688
+	Second Repair Time: 1.7142424583435059
+	Total Generation Time: 1.718231439590454
+	Mean(Between Samples) Cost Time: 477.19688999999994
+34th Generation:
+	Tournement Time: 0.000997304916381836
+	Crossover Time: 0.0
+	Mutation Time: 0.002991914749145508
+	Second Repair Time: 1.724015474319458
+	Total Generation Time: 1.7280046939849854
+	Mean(Between Samples) Cost Time: 477.28489
+35th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997781753540039
+	Mutation Time: 0.001994609832763672
+	Second Repair Time: 1.6683650016784668
+	Total Generation Time: 1.6713573932647705
+	Mean(Between Samples) Cost Time: 477.47739
+36th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.001994609832763672
+	Second Repair Time: 1.7427737712860107
+	Total Generation Time: 1.7457656860351562
+	Mean(Between Samples) Cost Time: 477.44268989999995
+37th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0011010169982910156
+	Mutation Time: 0.0019261837005615234
+	Second Repair Time: 1.721344232559204
+	Total Generation Time: 1.7243714332580566
+	Mean(Between Samples) Cost Time: 477.6145900000001
+38th Generation:
+	Tournement Time: 0.0009970664978027344
+	Crossover Time: 0.000997781753540039
+	Mutation Time: 0.0019941329956054688
+	Second Repair Time: 1.6885600090026855
+	Total Generation Time: 1.6925489902496338
+	Mean(Between Samples) Cost Time: 477.54769
+39th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.00099945068359375
+	Mutation Time: 0.001995563507080078
+	Second Repair Time: 1.7314014434814453
+	Total Generation Time: 1.7343964576721191
+	Mean(Between Samples) Cost Time: 478.14338990000005
+40th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009980201721191406
+	Mutation Time: 0.001993894577026367
+	Second Repair Time: 1.7638628482818604
+	Total Generation Time: 1.7668547630310059
+	Mean(Between Samples) Cost Time: 478.0567897
+41th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009968280792236328
+	Mutation Time: 0.002960681915283203
+	Second Repair Time: 1.7238240242004395
+	Total Generation Time: 1.7277815341949463
+	Mean(Between Samples) Cost Time: 478.1494897
+42th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010302066802978516
+	Mutation Time: 0.001992940902709961
+	Second Repair Time: 1.6764202117919922
+	Total Generation Time: 1.679443359375
+	Mean(Between Samples) Cost Time: 478.0406898999999
+43th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997781753540039
+	Mutation Time: 0.0029921531677246094
+	Second Repair Time: 1.6713323593139648
+	Total Generation Time: 1.6753222942352295
+	Mean(Between Samples) Cost Time: 478.26178980000003
+44th Generation:
+	Tournement Time: 0.000997304916381836
+	Crossover Time: 0.0009968280792236328
+	Mutation Time: 0.002028226852416992
+	Second Repair Time: 1.7368981838226318
+	Total Generation Time: 1.7409205436706543
+	Mean(Between Samples) Cost Time: 478.2328897
+45th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997781753540039
+	Mutation Time: 0.0019943714141845703
+	Second Repair Time: 1.6777143478393555
+	Total Generation Time: 1.68070650100708
+	Mean(Between Samples) Cost Time: 478.05178999999987
+46th Generation:
+	Tournement Time: 0.000997304916381836
+	Crossover Time: 0.0010290145874023438
+	Mutation Time: 0.0019648075103759766
+	Second Repair Time: 1.7270493507385254
+	Total Generation Time: 1.7310404777526855
+	Mean(Between Samples) Cost Time: 478.17279
+47th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.001994609832763672
+	Mutation Time: 0.0019948482513427734
+	Second Repair Time: 1.7232983112335205
+	Total Generation Time: 1.727287769317627
+	Mean(Between Samples) Cost Time: 477.98079000000007
+48th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009646415710449219
+	Mutation Time: 0.0020270347595214844
+	Second Repair Time: 1.7149088382720947
+	Total Generation Time: 1.7179005146026611
+	Mean(Between Samples) Cost Time: 477.71129
+49th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010056495666503906
+	Mutation Time: 0.001995086669921875
+	Second Repair Time: 1.6857695579528809
+	Total Generation Time: 1.6887702941894531
+	Mean(Between Samples) Cost Time: 477.68748990000006
+50th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009984970092773438
+	Mutation Time: 0.002960205078125
+	Second Repair Time: 1.789247751235962
+	Total Generation Time: 1.7932064533233643
+	Mean(Between Samples) Cost Time: 477.7309897
+51th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009968280792236328
+	Mutation Time: 0.0019941329956054688
+	Second Repair Time: 1.8027269840240479
+	Total Generation Time: 1.805717945098877
+	Mean(Between Samples) Cost Time: 477.9625897
+52th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010280609130859375
+	Mutation Time: 0.0019948482513427734
+	Second Repair Time: 1.6999304294586182
+	Total Generation Time: 1.7029533386230469
+	Mean(Between Samples) Cost Time: 478.1131898
+53th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010061264038085938
+	Mutation Time: 0.0019927024841308594
+	Second Repair Time: 1.7368748188018799
+	Total Generation Time: 1.7398736476898193
+	Mean(Between Samples) Cost Time: 477.88388980000013
+54th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010285377502441406
+	Mutation Time: 0.0019626617431640625
+	Second Repair Time: 1.675194501876831
+	Total Generation Time: 1.6781857013702393
+	Mean(Between Samples) Cost Time: 477.7030896
+55th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010328292846679688
+	Mutation Time: 0.0019910335540771484
+	Second Repair Time: 1.7366929054260254
+	Total Generation Time: 1.7397167682647705
+	Mean(Between Samples) Cost Time: 477.4216896999999
+56th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010025501251220703
+	Mutation Time: 0.0019903182983398438
+	Second Repair Time: 1.805596113204956
+	Total Generation Time: 1.808588981628418
+	Mean(Between Samples) Cost Time: 477.20608980000003
+57th Generation:
+	Tournement Time: 0.0009989738464355469
+	Crossover Time: 0.0010302066802978516
+	Mutation Time: 0.0019919872283935547
+	Second Repair Time: 1.8157880306243896
+	Total Generation Time: 1.8198091983795166
+	Mean(Between Samples) Cost Time: 477.38908969999994
+58th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997781753540039
+	Mutation Time: 0.001993894577026367
+	Second Repair Time: 1.7226598262786865
+	Total Generation Time: 1.725651502609253
+	Mean(Between Samples) Cost Time: 477.4170898
+59th Generation:
+	Tournement Time: 0.0009646415710449219
+	Crossover Time: 0.0010285377502441406
+	Mutation Time: 0.0019986629486083984
+	Second Repair Time: 1.7389419078826904
+	Total Generation Time: 1.742933750152588
+	Mean(Between Samples) Cost Time: 477.6047899
+60th Generation:
+	Tournement Time: 0.000997304916381836
+	Crossover Time: 0.0
+	Mutation Time: 0.002993345260620117
+	Second Repair Time: 1.7360918521881104
+	Total Generation Time: 1.7400825023651123
+	Mean(Between Samples) Cost Time: 477.8534897
+61th Generation:
+	Tournement Time: 0.0009653568267822266
+	Crossover Time: 0.0010297298431396484
+	Mutation Time: 0.0019974708557128906
+	Second Repair Time: 1.749941110610962
+	Total Generation Time: 1.7539336681365967
+	Mean(Between Samples) Cost Time: 477.98988959999997
+62th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.001994609832763672
+	Mutation Time: 0.0019941329956054688
+	Second Repair Time: 1.791170597076416
+	Total Generation Time: 1.7951593399047852
+	Mean(Between Samples) Cost Time: 478.3045894999999
+63th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010001659393310547
+	Mutation Time: 0.001992464065551758
+	Second Repair Time: 1.7029647827148438
+	Total Generation Time: 1.7059574127197266
+	Mean(Between Samples) Cost Time: 478.4064897999999
+64th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.0019943714141845703
+	Second Repair Time: 1.7147960662841797
+	Total Generation Time: 1.717787742614746
+	Mean(Between Samples) Cost Time: 478.67578979999996
+65th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.001994609832763672
+	Second Repair Time: 1.6754310131072998
+	Total Generation Time: 1.6784229278564453
+	Mean(Between Samples) Cost Time: 478.4712897000001
+66th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010311603546142578
+	Mutation Time: 0.001993894577026367
+	Second Repair Time: 1.6797480583190918
+	Total Generation Time: 1.6827731132507324
+	Mean(Between Samples) Cost Time: 478.3263899
+67th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997781753540039
+	Mutation Time: 0.0019941329956054688
+	Second Repair Time: 1.7275848388671875
+	Total Generation Time: 1.730576753616333
+	Mean(Between Samples) Cost Time: 478.3259895
+68th Generation:
+	Tournement Time: 0.000997304916381836
+	Crossover Time: 0.0010290145874023438
+	Mutation Time: 0.001001119613647461
+	Second Repair Time: 1.7302112579345703
+	Total Generation Time: 1.733238697052002
+	Mean(Between Samples) Cost Time: 478.43048899999997
+69th Generation:
+	Tournement Time: 0.0007002353668212891
+	Crossover Time: 0.0009565353393554688
+	Mutation Time: 0.002031564712524414
+	Second Repair Time: 1.6964702606201172
+	Total Generation Time: 1.7001585960388184
+	Mean(Between Samples) Cost Time: 478.4194887
+70th Generation:
+	Tournement Time: 0.0009329319000244141
+	Crossover Time: 0.0009970664978027344
+	Mutation Time: 0.0020291805267333984
+	Second Repair Time: 1.6773500442504883
+	Total Generation Time: 1.6813092231750488
+	Mean(Between Samples) Cost Time: 478.29228839999996
+71th Generation:
+	Tournement Time: 0.0009980201721191406
+	Crossover Time: 0.001028299331665039
+	Mutation Time: 0.001995086669921875
+	Second Repair Time: 1.7586758136749268
+	Total Generation Time: 1.7626972198486328
+	Mean(Between Samples) Cost Time: 478.1419868000001
+72th Generation:
+	Tournement Time: 0.0009980201721191406
+	Crossover Time: 0.0010311603546142578
+	Mutation Time: 0.0009942054748535156
+	Second Repair Time: 1.7379543781280518
+	Total Generation Time: 1.7409777641296387
+	Mean(Between Samples) Cost Time: 477.8767859999999
+73th Generation:
+	Tournement Time: 0.000997781753540039
+	Crossover Time: 0.001024007797241211
+	Mutation Time: 0.0010020732879638672
+	Second Repair Time: 1.8242852687835693
+	Total Generation Time: 1.8273091316223145
+	Mean(Between Samples) Cost Time: 477.6739855000001
+74th Generation:
+	Tournement Time: 0.0009980201721191406
+	Crossover Time: 0.001028299331665039
+	Mutation Time: 0.002016782760620117
+	Second Repair Time: 1.6819286346435547
+	Total Generation Time: 1.685971736907959
+	Mean(Between Samples) Cost Time: 477.8987869999999
+75th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009756088256835938
+	Mutation Time: 0.0029926300048828125
+	Second Repair Time: 1.7575509548187256
+	Total Generation Time: 1.761519193649292
+	Mean(Between Samples) Cost Time: 478.12698779999994
+76th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010199546813964844
+	Mutation Time: 0.001999378204345703
+	Second Repair Time: 1.805210828781128
+	Total Generation Time: 1.8082301616668701
+	Mean(Between Samples) Cost Time: 478.36578860000003
+77th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009951591491699219
+	Mutation Time: 0.001964569091796875
+	Second Repair Time: 1.6839165687561035
+	Total Generation Time: 1.6868762969970703
+	Mean(Between Samples) Cost Time: 478.2936884999999
+78th Generation:
+	Tournement Time: 0.0009975433349609375
+	Crossover Time: 0.0
+	Mutation Time: 0.002117156982421875
+	Second Repair Time: 1.639761209487915
+	Total Generation Time: 1.6428759098052979
+	Mean(Between Samples) Cost Time: 478.1585892
+79th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010433197021484375
+	Mutation Time: 0.0019958019256591797
+	Second Repair Time: 1.7150707244873047
+	Total Generation Time: 1.7181098461151123
+	Mean(Between Samples) Cost Time: 478.062289
+80th Generation:
+	Tournement Time: 0.0009639263153076172
+	Crossover Time: 0.001031637191772461
+	Mutation Time: 0.0019609928131103516
+	Second Repair Time: 1.7440261840820312
+	Total Generation Time: 1.7479827404022217
+	Mean(Between Samples) Cost Time: 478.10268879999995
+81th Generation:
+	Tournement Time: 0.000982522964477539
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.0019941329956054688
+	Second Repair Time: 1.7920701503753662
+	Total Generation Time: 1.796044111251831
+	Mean(Between Samples) Cost Time: 478.18908840000006
+82th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000993490219116211
+	Mutation Time: 0.001962423324584961
+	Second Repair Time: 1.6799571514129639
+	Total Generation Time: 1.682913064956665
+	Mean(Between Samples) Cost Time: 477.70388869999994
+83th Generation:
+	Tournement Time: 0.000997781753540039
+	Crossover Time: 0.0010471343994140625
+	Mutation Time: 0.0019769668579101562
+	Second Repair Time: 1.9918839931488037
+	Total Generation Time: 1.995905876159668
+	Mean(Between Samples) Cost Time: 477.74798899999996
+84th Generation:
+	Tournement Time: 0.0009975433349609375
+	Crossover Time: 0.0
+	Mutation Time: 0.002993345260620117
+	Second Repair Time: 1.8050429821014404
+	Total Generation Time: 1.8090338706970215
+	Mean(Between Samples) Cost Time: 477.3609884
+85th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.003022909164428711
+	Mutation Time: 0.0039598941802978516
+	Second Repair Time: 1.8835082054138184
+	Total Generation Time: 1.890491008758545
+	Mean(Between Samples) Cost Time: 477.17078899999996
+86th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010476112365722656
+	Mutation Time: 0.0029420852661132812
+	Second Repair Time: 1.8261942863464355
+	Total Generation Time: 1.830183982849121
+	Mean(Between Samples) Cost Time: 477.27148859999994
+87th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.001994609832763672
+	Second Repair Time: 1.9175653457641602
+	Total Generation Time: 1.9205572605133057
+	Mean(Between Samples) Cost Time: 477.2300886000001
+88th Generation:
+	Tournement Time: 0.0009982585906982422
+	Crossover Time: 0.001028299331665039
+	Mutation Time: 0.0019979476928710938
+	Second Repair Time: 1.7969698905944824
+	Total Generation Time: 1.8009943962097168
+	Mean(Between Samples) Cost Time: 477.65368920000003
+89th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010881423950195312
+	Mutation Time: 0.0019421577453613281
+	Second Repair Time: 1.8147690296173096
+	Total Generation Time: 1.8177993297576904
+	Mean(Between Samples) Cost Time: 477.5143890000001
+90th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.001013040542602539
+	Mutation Time: 0.002003908157348633
+	Second Repair Time: 1.89621901512146
+	Total Generation Time: 1.8992359638214111
+	Mean(Between Samples) Cost Time: 476.81048780000015
+91th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0009961128234863281
+	Mutation Time: 0.0019965171813964844
+	Second Repair Time: 2.1341958045959473
+	Total Generation Time: 2.13718843460083
+	Mean(Between Samples) Cost Time: 476.9262882
+92th Generation:
+	Tournement Time: 0.0009493827819824219
+	Crossover Time: 0.0009963512420654297
+	Mutation Time: 0.001992940902709961
+	Second Repair Time: 1.994490385055542
+	Total Generation Time: 1.9984290599822998
+	Mean(Between Samples) Cost Time: 477.1195875000001
+93th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.0010597705841064453
+	Mutation Time: 0.0019366741180419922
+	Second Repair Time: 1.8721797466278076
+	Total Generation Time: 1.875176191329956
+	Mean(Between Samples) Cost Time: 477.26308859999995
+94th Generation:
+	Tournement Time: 0.0
+	Crossover Time: 0.000997304916381836
+	Mutation Time: 0.0024919509887695312
+	Second Repair Time: 1.842519998550415
+	Total Generation Time: 1.8460092544555664
+	Mean(Between Samples) Cost Time: 477.3736891
+95th Generation:
