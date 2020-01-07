@@ -57,26 +57,16 @@ def ReadInputFile(input_file):
 
 num_of_nodes, num_of_edges, weight_vec, adj_matrix = ReadInputFile(input_file=input_file)
 
-def FindFlipNodes(_temp_adj_matrix, not_covered_edges_idx):
-
-    _temp_adj_triu_idx = np.tril_indices_from(_temp_adj_matrix)
-
-    employable_edges_idx = np.argwhere(_temp_adj_matrix[_temp_adj_triu_idx] == 1)
-    employable_nodes_idx = _temp_adj_triu_idx[0][employable_edges_idx]
-    efficiency_matrix = pd.DataFrame(np.array(np.unique(employable_nodes_idx, return_counts=True)).T,
-                        columns=["NodeID", "Efficiency"], dtype=object)
-    efficiency_matrix["NodeID"] = efficiency_matrix["NodeID"].astype(np.int)
-    efficiency_matrix["Efficiency"] = efficiency_matrix["Efficiency"]/weight_vec[efficiency_matrix["NodeID"]]
-
-    return efficiency_matrix.sort_values(by=['Efficiency'], ascending=False)
-
 def CheckVertexCover(_temp_adj_matrix):
 
     # Not Covered Edges Indices
-    return np.argwhere(_temp_adj_matrix != 0)
+    return np.nonzero(_temp_adj_matrix)
 
-def ModifyAdjMatrixForSample(_temp_adj_matrix, nodes_employed_idx):
-    _temp_adj_matrix[nodes_employed_idx] = _temp_adj_matrix[:, nodes_employed_idx] = 0
+def ModifyAdjMatrixForSample(_temp_adj_matrix, nodes_employed_idx, new_employed_idx=None):
+    if (new_employed_idx is None):
+        _temp_adj_matrix[nodes_employed_idx] = _temp_adj_matrix[:, nodes_employed_idx] = 0
+    else:
+        _temp_adj_matrix[new_employed_idx, :] = _temp_adj_matrix[:, new_employed_idx] = 0
 
 def CheckRepair(generation):
 
@@ -85,11 +75,11 @@ def CheckRepair(generation):
         start_repair = time.time()
         print(f"Repairing: {sample_idx}")
         _temp_adj_matrix = adj_matrix.copy()
-        nodes_employed_idx = np.argwhere(cur_sample==1)
+        nodes_employed_idx = np.nonzero(cur_sample)
         ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=nodes_employed_idx)
     
         not_covered_edges_idx = CheckVertexCover(_temp_adj_matrix=_temp_adj_matrix)
-        if(not_covered_edges_idx.size != 0):
+        if(len(not_covered_edges_idx[0]) != 0):
             start_exec_repair = time.time()
             ExecuteRepair(cur_sample=cur_sample, _temp_adj_matrix=_temp_adj_matrix, not_covered_edges_idx=not_covered_edges_idx)
             end_exec_repair = time.time()
@@ -102,28 +92,23 @@ def CheckRepair(generation):
 
 def ExecuteRepair(cur_sample, _temp_adj_matrix, not_covered_edges_idx):
     is_repaired = False
-    flip_time_arr = []
+    one_step_exec_arr = []
     while(is_repaired == False):  
+        start_exec = time.time()
+        new_employed_idx = np.random.choice(not_covered_edges_idx[:][0], size=np.random.randint(low=2, high=50))
+        cur_sample[new_employed_idx] = 1
 
-        start_flip = time.time()
-        flip_eff_mat = FindFlipNodes(_temp_adj_matrix, not_covered_edges_idx)
-        end_flip = time.time()
-        flip_time_arr.append(end_flip - start_flip)
-        
-        if(np.random.randn() > 0.8):
-            rand_flip_idx = np.random.randint(len(flip_eff_mat))
-            cur_sample[flip_eff_mat.iloc[rand_flip_idx]["NodeID"]] = 1
-        else:
-            cur_sample[flip_eff_mat.iloc[0].NodeID] = 1
-
-        nodes_employed_idx = np.argwhere(cur_sample==1)
-        ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=nodes_employed_idx)
+        ModifyAdjMatrixForSample(_temp_adj_matrix=_temp_adj_matrix, nodes_employed_idx=None, new_employed_idx=new_employed_idx)
         not_covered_edges_idx = CheckVertexCover(_temp_adj_matrix=_temp_adj_matrix)
-        is_repaired = not_covered_edges_idx.size == 0
-    print(f"Mean flip time: {np.mean(flip_time_arr)}, Total Flips = {len(flip_time_arr)}, Total Flip Time = {np.sum(flip_time_arr)}")
+        is_repaired = len(not_covered_edges_idx[0]) == 0
+        end_exec = time.time()
+        one_step_exec_arr.append(end_exec-start_exec)
+    print(f"Mean Exec Cover: {np.mean(one_step_exec_arr)}")
+
+
 generation = GetRandomGeneration(population_size=population_size)
 generation = CheckRepair(generation=generation)
-pass
+
 
 def TournementSelection():
     best = None
