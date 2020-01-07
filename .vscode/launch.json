@@ -9,6 +9,6 @@
         "request": "launch",
         "program": "${file}",
         "console": "integratedTerminal",
-        "args": ["003.txt", "100", "100", "0.5", "0.05"]
+        "args": ["003.txt", "100", "100", "0.5", "1/n"]
     }]
 }
